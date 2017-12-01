@@ -139,7 +139,7 @@ inAppPurchase.getProducts = function (productIds) {
             description: val.description,
             price: val.price,
             currency: val.currency,
-            priceAsDecimal: val.priceAsDecimal,
+            priceAsDecimal: val.priceAsDecimal
           };
         });
         resolve(arr);
@@ -213,6 +213,10 @@ inAppPurchase.restorePurchases = function () {
 };
 
 inAppPurchase.getReceipt = function () {
+  return Promise.resolve('');
+};
+
+inAppPurchase.getReceiptWithoutForceRefresh = function () {
   return Promise.resolve('');
 };
 

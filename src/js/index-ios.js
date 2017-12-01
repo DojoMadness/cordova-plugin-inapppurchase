@@ -88,6 +88,16 @@ inAppPurchase.getReceipt = () => {
   });
 };
 
+inAppPurchase.getReceiptWithoutForceRefresh = () => {
+  return nativeCall('getReceiptWithoutForceRefresh').then((res) => {
+    let receipt = '';
+    if (res && res.receipt) {
+      receipt = res.receipt;
+    }
+    return receipt;
+  });
+};
+
 inAppPurchase.restorePurchases = () => {
   return nativeCall('restorePurchases').then((res) => {
     let arr = [];

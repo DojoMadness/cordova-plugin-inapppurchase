@@ -82,9 +82,9 @@ inAppPurchase.getProducts = function (productIds) {
               productId: val.productId,
               title: val.title,
               description: val.description,
-              price: val.price,
-              currency: val.currency,
               priceAsDecimal: val.priceAsDecimal,
+              price: val.price,
+              currency: val.currency
             };
           });
           resolve(arr);
@@ -129,6 +129,16 @@ inAppPurchase.consume = function () {
 
 inAppPurchase.getReceipt = function () {
   return nativeCall('getReceipt').then(function (res) {
+    var receipt = '';
+    if (res && res.receipt) {
+      receipt = res.receipt;
+    }
+    return receipt;
+  });
+};
+
+inAppPurchase.getReceiptWithoutForceRefresh = function () {
+  return nativeCall('getReceiptWithoutForceRefresh').then(function (res) {
     var receipt = '';
     if (res && res.receipt) {
       receipt = res.receipt;
