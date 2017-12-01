@@ -216,8 +216,4 @@ inAppPurchase.getReceipt = function () {
   return Promise.resolve('');
 };
 
-inAppPurchase.getReceiptWithoutForceRefresh = function () {
-  return Promise.resolve('');
-};
-
 module.exports = inAppPurchase;

@@ -128,8 +128,4 @@ inAppPurchase.getReceipt = () => {
   return Promise.resolve('');
 };
 
-inAppPurchase.getReceiptWithoutForceRefresh = () => {
-  return Promise.resolve('');
-};
-
 module.exports = inAppPurchase;
